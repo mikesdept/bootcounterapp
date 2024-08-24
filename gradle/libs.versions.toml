@@ -3,6 +3,8 @@ appcompat = "1.7.0"
 material = "1.12.0"
 dagger = "2.51.1"
 room = "2.6.1"
+javaxInject = "1"
+kotlinCoroutines = "1.8.1"
 
 agp = "8.5.2"
 kotlin = "2.0.0"
@@ -24,6 +26,10 @@ room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 # Navigation
 navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
 navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+
+# Domain
+javax-inject = { module = "javax.inject:javax.inject", version.ref = "javaxInject" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinCoroutines" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

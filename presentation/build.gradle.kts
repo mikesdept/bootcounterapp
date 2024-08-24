@@ -39,7 +39,7 @@ android {
 
 dependencies {
     // Modules
-//    implementation(projects.domain)
+    implementation(projects.domain)
 
     // Navigation
     implementation(libs.navigation.fragment.ktx)

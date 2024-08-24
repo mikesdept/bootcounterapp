@@ -35,7 +35,7 @@ android {
 
 dependencies {
     // Modules
-//    implementation(projects.domain)
+    implementation(projects.domain)
 
     // Dagger
     implementation(libs.dagger)

@@ -23,5 +23,6 @@ rootProject.name = "bootcounterapp"
 include(":app")
 include(":presentation")
 include(":data")
+include(":domain")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
