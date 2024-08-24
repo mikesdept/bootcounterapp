@@ -1,13 +1,14 @@
 package mikes.dept.domain.usecase
 
+import kotlinx.coroutines.flow.Flow
 import mikes.dept.domain.entities.BootEventEntity
 import mikes.dept.domain.repository.BootEventRepository
 import javax.inject.Inject
 
-class GetAllBootEventsUseCase @Inject constructor(
+class ObserveAllBootEventsUseCase @Inject constructor(
     private val bootEventRepository: BootEventRepository
 ) {
 
-    suspend operator fun invoke(): List<BootEventEntity>? = bootEventRepository.getAllBootEvents()
+    operator fun invoke(): Flow<List<BootEventEntity>> = bootEventRepository.observeAllBootEvents()
 
 }

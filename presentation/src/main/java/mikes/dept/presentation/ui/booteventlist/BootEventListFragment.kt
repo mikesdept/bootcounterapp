@@ -32,6 +32,13 @@ class BootEventListFragment : BaseBindingFragment<BootEventListViewModel, Fragme
                 viewModel.navDirections.collectLatest { navDirections -> findNavController().navigate(navDirections) }
             }
         }
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.bootEventList.collectLatest { bootEventList ->
+
+                }
+            }
+        }
     }
 
     override fun reset() {

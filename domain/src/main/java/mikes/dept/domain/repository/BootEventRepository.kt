@@ -1,10 +1,11 @@
 package mikes.dept.domain.repository
 
+import kotlinx.coroutines.flow.Flow
 import mikes.dept.domain.entities.BootEventEntity
 
 interface BootEventRepository {
 
-    suspend fun getAllBootEvents(): List<BootEventEntity>?
+    fun observeAllBootEvents(): Flow<List<BootEventEntity>>
 
     suspend fun insertBootEvent(bootEventEntity: BootEventEntity)
 
