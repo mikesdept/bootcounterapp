@@ -43,7 +43,7 @@ dependencies {
     // Modules
 //    implementation(projects.domain)
 //    implementation(projects.data)
-//    implementation(projects.presentation)
+    implementation(projects.presentation)
 
     //DI
     implementation(libs.dagger)

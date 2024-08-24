@@ -3,6 +3,9 @@ package mikes.dept.bootcounterapp.di
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
+import mikes.dept.presentation.ui.booteventlist.BootEventListSubcomponent
+import mikes.dept.presentation.ui.main.MainSubcomponent
+import mikes.dept.presentation.ui.settings.SettingsSubcomponent
 import javax.inject.Singleton
 
 @Singleton
@@ -18,5 +21,11 @@ interface AppComponent {
         fun build(): AppComponent
 
     }
+
+    fun mainSubcomponentBuilder(): MainSubcomponent.Builder
+
+    fun bootEventListSubcomponentBuilder(): BootEventListSubcomponent.Builder
+
+    fun settingsSubcomponentBuilder(): SettingsSubcomponent.Builder
 
 }

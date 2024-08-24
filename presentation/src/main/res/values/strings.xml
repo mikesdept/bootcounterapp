@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="boot_event_list_title">Boot Event List</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_total_dismissals_allowed">Total dismissals allowed</string>
+    <string name="settings_interval_between_dismissals">Interval between dismissals</string>
+    <string name="settings_save">Save</string>
+</resources>
