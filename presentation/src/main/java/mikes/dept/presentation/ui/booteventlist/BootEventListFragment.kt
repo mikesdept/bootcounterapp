@@ -11,9 +11,14 @@ import kotlinx.coroutines.launch
 import mikes.dept.presentation.R
 import mikes.dept.presentation.databinding.FragmentBootEventListBinding
 import mikes.dept.presentation.di.SubcomponentProvider
+import mikes.dept.presentation.ui.booteventlist.adapter.BootEventAdapter
 import mikes.dept.presentation.ui.core.BaseBindingFragment
+import javax.inject.Inject
 
 class BootEventListFragment : BaseBindingFragment<BootEventListViewModel, FragmentBootEventListBinding>(R.layout.fragment_boot_event_list) {
+
+    @Inject
+    lateinit var bootEventAdapter: BootEventAdapter
 
     override fun initDagger(subcomponentProvider: SubcomponentProvider) = subcomponentProvider
         .provideBootEventListSubcomponent()
@@ -27,6 +32,7 @@ class BootEventListFragment : BaseBindingFragment<BootEventListViewModel, Fragme
         binding.btnSave.setOnClickListener {
             viewModel.onClickSettings()
         }
+        binding.rvBootEventList.adapter = bootEventAdapter
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.navDirections.collectLatest { navDirections -> findNavController().navigate(navDirections) }
@@ -35,7 +41,7 @@ class BootEventListFragment : BaseBindingFragment<BootEventListViewModel, Fragme
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.bootEventList.collectLatest { bootEventList ->
-
+                    bootEventAdapter.submitList(bootEventList)
                 }
             }
         }
