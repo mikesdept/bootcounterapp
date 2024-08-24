@@ -42,7 +42,7 @@ android {
 dependencies {
     // Modules
 //    implementation(projects.domain)
-//    implementation(projects.data)
+    implementation(projects.data)
     implementation(projects.presentation)
 
     //DI

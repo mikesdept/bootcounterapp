@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.navigation.safeargs)
     alias(libs.plugins.kotlin.ksp)
 }
 
@@ -32,21 +31,18 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
     // Modules
 //    implementation(projects.domain)
 
-    // Navigation
-    implementation(libs.navigation.fragment.ktx)
-    implementation(libs.navigation.ui.ktx)
-
     // Dagger
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
+
+    // Room
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler)
 
 }
