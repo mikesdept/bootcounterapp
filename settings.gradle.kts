@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "bootcounterapp"
 include(":app")
- 
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
