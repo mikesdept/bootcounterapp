@@ -3,6 +3,7 @@ package mikes.dept.bootcounterapp.di
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
+import mikes.dept.bootcounterapp.receiver.BootCompletedReceiver
 import mikes.dept.presentation.ui.booteventlist.BootEventListSubcomponent
 import mikes.dept.presentation.ui.main.MainSubcomponent
 import mikes.dept.presentation.ui.settings.SettingsSubcomponent
@@ -27,5 +28,7 @@ interface AppComponent {
     fun bootEventListSubcomponentBuilder(): BootEventListSubcomponent.Builder
 
     fun settingsSubcomponentBuilder(): SettingsSubcomponent.Builder
+
+    fun inject(bootCompletedReceiver: BootCompletedReceiver)
 
 }

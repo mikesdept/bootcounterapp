@@ -10,7 +10,7 @@ import mikes.dept.presentation.ui.settings.SettingsSubcomponent
 
 class App : Application(), SubcomponentProvider {
 
-    private val appComponent: AppComponent by lazy {
+    val appComponent: AppComponent by lazy {
         DaggerAppComponent.builder()
             .context(applicationContext)
             .build()

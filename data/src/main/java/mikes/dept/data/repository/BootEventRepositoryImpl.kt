@@ -4,6 +4,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 import mikes.dept.data.database.BootCounterAppAppDatabase
 import mikes.dept.data.mapper.toDb
 import mikes.dept.data.mapper.toDomain
@@ -21,7 +22,7 @@ class BootEventRepositoryImpl @Inject constructor(
         }
         .flowOn(Dispatchers.IO)
 
-    override suspend fun insertBootEvent(bootEventEntity: BootEventEntity) {
+    override suspend fun insertBootEvent(bootEventEntity: BootEventEntity) = withContext(Dispatchers.IO) {
         bootCounterAppAppDatabase.bootEventDao().insert(bootEventDBEntity = bootEventEntity.toDb())
     }
 
